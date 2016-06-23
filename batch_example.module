@@ -101,7 +101,6 @@ function batch_example_menu() {
     'file' => 'inc/batch_example_4.inc',
   );
   
-
   /**
    * Batch animation capturing logs.
    */
@@ -112,10 +111,29 @@ function batch_example_menu() {
     'file' => 'inc/batch_example_5.inc',
   );
   
+  /**
+   * Batch animation capturing logs.
+   */
+  $items['batch-example/6-0'] = array(
+    'title' => 'Batch example 6 custom queue',
+    'page callback' => 'batch_example_6',
+    'access callback' => TRUE,
+    'file' => 'inc/batch_example_6.inc',
+  );
+  
   return $items;
 }
 
 
 function batch_examples() {
   return t('Some batch examples');
+}
+
+/**
+ * Queue example implementation.
+ * 
+ * @see batch_example_6()
+ */
+class BatchExampleQueue extends BatchQueue {
+
 }
