@@ -1,8 +1,7 @@
 <?php
 
 /**
- * More options and redirection when finished.
- * TODO....
+ * More options and custom queue.
  */
 
 /**
