@@ -22,13 +22,12 @@ function batch_example_5() {
 
   // Set progressive option.
   $batch1 = &batch_get();
-//  $batch1['progressive'] = FALSE;
+  $batch1['progressive'] = FALSE;
 
   batch_process('batch-example');
 }
 
 function batch_example_5_get_files(&$context) {
-  sleep(200);
   $path = drupal_get_path('module', 'batch_example') . '/files/';
   $files = file_scan_directory($path, '/^batch_example_3.*\.png$/');
   
