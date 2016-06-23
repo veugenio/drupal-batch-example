@@ -1,0 +1,26 @@
+<?php
+
+class BatchExample3TestCase extends DrupalUnitTestCase {
+  
+  public static function getInfo() {
+    return array(
+      'name' => 'Batch Example 3',
+      'description' => 'Batch example 3.',
+      'group' => 'Batch Examples',
+    );
+  }
+  
+  protected function setUp() {
+    module_load_include('inc', 'batch_example', 'inc/batch_example_3');
+    parent::setUp();
+  }
+
+  public function testGetFiles() {
+    $context['results'] = NULL;
+    batch_example_3_get_files($context);
+    
+    $this->assertTrue(is_array($context['results']));
+  }
+
+  
+}

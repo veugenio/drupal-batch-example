@@ -1,0 +1,6 @@
+name = Batch example
+description = Batch examples.
+core = 7.x
+package = Examples
+files[] = batch_example.test
+
