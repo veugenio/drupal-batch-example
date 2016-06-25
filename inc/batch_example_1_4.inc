@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Simplest batch implementation.
+ * Bath using context and operation with finished param.
  */
 
 /**

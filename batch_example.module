@@ -40,21 +40,21 @@ function batch_example_menu() {
   );
   
   $items['batch-example/1-3'] = array(
-    'title' => 'Batch example 1.3',
+    'title' => 'Batch example 1.3 - Params e context',
     'page callback' => 'batch_example_1',
     'access callback' => TRUE,
     'file' => 'inc/batch_example_1_3.inc',
   );
   
   $items['batch-example/1-4'] = array(
-    'title' => 'Batch example 1.4',
+    'title' => 'Batch example 1.4 - Finished param',
     'page callback' => 'batch_example_1',
     'access callback' => TRUE,
     'file' => 'inc/batch_example_1_4.inc',
   );
 
   $items['batch-example/1-5'] = array(
-    'title' => 'Batch example 1.5',
+    'title' => 'Batch example 1.5 - Processing nodes',
     'page callback' => 'batch_example_1',
     'access callback' => TRUE,
     'file' => 'inc/batch_example_1_5.inc',
@@ -64,7 +64,7 @@ function batch_example_menu() {
    * Batch with a form.
    */
   $items['batch-example/2-0'] = array(
-    'title' => 'Batch example 2',
+    'title' => 'Batch example 2 - Form batch',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('batch_example_2'),
     'access callback' => TRUE,

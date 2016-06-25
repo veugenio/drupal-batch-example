@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Simplest batch implementation.
+ * Batch selecting a range of nodes to process.
  */
 
 /**
@@ -14,7 +14,10 @@ function batch_example_1() {
       array('batch_example_1_operation_2', array()),
       array('batch_example_1_operation_3', array())
     ),
-    'file' => drupal_get_path('module', 'batch_example') . '/inc/batch_example_1_5.inc'
+    'file' => drupal_get_path('module', 'batch_example') . '/inc/batch_example_1_5.inc',
+    'title' => t('Node processor'),
+    'init_message' => t('Processing nodes.'),
+    'progress_message' => t('Processed @current out of @total.'),
   );
   batch_set($batch);
   batch_process('batch-example');

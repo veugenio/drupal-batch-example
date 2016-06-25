@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Multiple operations and context.
+ * Batched form submission.
  */
 
 /**
@@ -81,5 +81,18 @@ function batch_example_2_operation_get_content($urls, $context) {
  * Operation to save the content in a zip file.
  */
 function batch_example_2_operation_zip_content($context) {
-  dpm($context);
+
+  $zip = new ZipArchive();
+  $zip->open('/tmp/result.zip');
+  
+  foreach ($context['results'] as $result) {
+    preg_match('/Host\: (.*)/', $result->request, $matches);
+    $zip->addFromString($matches[1], $result->data);
+  }
+  
+  $zip->close();
+  rename($zip->filename, drupal_realpath('public://result.zip'));
+  
+  drupal_set_message(l('arquivo final', '/sites/default/files/result.zip'));
+  dpm(drupal_realpath('public://result.zip'));
 }
