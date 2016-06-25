@@ -83,7 +83,7 @@ function batch_example_2_operation_get_content($urls, $context) {
 function batch_example_2_operation_zip_content($context) {
 
   $zip = new ZipArchive();
-  $zip->open('/tmp/result.zip');
+  $zip->open('/tmp/result.zip', ZipArchive::CREATE);
   
   foreach ($context['results'] as $result) {
     preg_match('/Host\: (.*)/', $result->request, $matches);
@@ -91,8 +91,6 @@ function batch_example_2_operation_zip_content($context) {
   }
   
   $zip->close();
-  rename($zip->filename, drupal_realpath('public://result.zip'));
-  
+  rename('/tmp/result.zip', drupal_realpath('public://result.zip'));
   drupal_set_message(l('arquivo final', '/sites/default/files/result.zip'));
-  dpm(drupal_realpath('public://result.zip'));
 }
